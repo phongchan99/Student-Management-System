@@ -14,7 +14,7 @@ public class StudentService implements Serializable {
     @Autowired
     private StudentRepository repository;
 
-    public Student findStudentById(int id) {
+    public Student studentById(int id) {
         return repository.findById(id).orElse(null);
     }
 
