@@ -39,7 +39,7 @@ public class StudentController {
     }
 
     @DeleteMapping("/deleteStudent/{id}")
-    public void deleteStudent(@PathVariable int id) {
-        service.deleteStudent(id);
+    public String deleteStudent(@PathVariable int id) {
+        return service.deleteStudent(id);
     }
 }

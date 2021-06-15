@@ -33,4 +33,11 @@ public class CourseService {
         repository.deleteById(id);
         return "Course " + id + " removed";
     }
+
+    public Course updateCourse(Course course) {
+        Course existCourse = repository.findById(course.getId()).orElse(null);
+        existCourse.setName(course.getName());
+        existCourse.setCredit(course.getCredit());
+        return repository.save(existCourse);
+    }
 }

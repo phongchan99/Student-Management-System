@@ -36,7 +36,7 @@ public class StudentService implements Serializable {
     }
 
     public Student updateStudent(Student student) {
-        Student existStudent = new Student();
+        Student existStudent = repository.findById(student.getId()).orElse(null);
         existStudent.setName(student.getName());
         return repository.save(existStudent);
     }
